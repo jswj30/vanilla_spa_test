@@ -9,20 +9,23 @@ module.exports = {
     router: "./router.js",
     app: "./index.js",
   },
-  outer: {
+
+  output: {
     path: resolve(__dirname, "./dist"),
     filename: "[name].js",
   },
+
   plugins: [
     new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "index.html",
+      filename: "index.html", // output file name
+      template: "index.html", // template file name
     }),
     new MiniCssExtractPlugin({ filename: "app.css" }),
     new CleanWebpackPlugin({
       cleanAfterEveryBuildPatterns: ["dist"],
     }),
   ],
+
   module: {
     rules: [
       {
